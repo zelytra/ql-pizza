@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import HeaderComponent from "./components/HeaderComponent.vue";
+import PizzaComponent from './components/PizzaComponent.vue'
 </script>
 
 <template>
   <HeaderComponent/>
+  <PizzaComponent/>
 </template>
 
 <style lang="scss">
 
-#app{
+#app {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -31,27 +33,27 @@ import HeaderComponent from "./components/HeaderComponent.vue";
 /* Jost fonts imports*/
 @font-face {
   font-family: Jost-SemiBold;
-  src: url("/src/assets/fonts/jost/Jost-SemiBold.ttf");
+  src: url("assets/fonts/jost/Jost-SemiBold.ttf");
 }
 
 @font-face {
   font-family: Jost-MediumItalic;
-  src: url("/src/assets/fonts/jost/Jost-MediumItalic.ttf");
+  src: url("assets/fonts/jost/Jost-MediumItalic.ttf");
 }
 
 @font-face {
   font-family: Jost-Medium;
-  src: url("/src/assets/fonts/jost/Jost-Medium.ttf");
+  src: url("/assets/fonts/jost/Jost-Medium.ttf");
 }
 
 @font-face {
   font-family: Jost-Regular;
-  src: url("/src/assets/fonts/jost/Jost-Regular.ttf");
+  src: url("assets/fonts/jost/Jost-Regular.ttf");
 }
 
 @font-face {
   font-family: Jost-Light;
-  src: url("/src/assets/fonts/jost/Jost-Light.ttf");
+  src: url("assets/fonts/jost/Jost-Light.ttf");
 }
 
 
