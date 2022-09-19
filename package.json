@@ -1,22 +1,27 @@
 {
   "name": "ql-pizza",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "@mdi/font": "5.9.55",
+    "roboto-fontface": "*",
+    "vue": "^3.2.37",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@types/webfontloader": "^1.0.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
-  }
+  },
+  "type": "module"
 }

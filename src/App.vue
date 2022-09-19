@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import HeaderComponent from "./components/HeaderComponent.vue";
 import PizzaComponent from './components/PizzaComponent.vue'
+import {Basket} from './object/Pizza.ts'
+import {ref, onBeforeMount} from 'vue'
+
+const basket: Basket = ref<Basket>(new Basket());
+
 </script>
 
 <template>
-  <HeaderComponent/>
-  <PizzaComponent/>
+  <HeaderComponent :basket="basket"/>
+  <PizzaComponent :basket="basket"/>
 </template>
 
 <style lang="scss">
@@ -60,8 +65,10 @@ import PizzaComponent from './components/PizzaComponent.vue'
 // Global color variable
 body {
   --primary-text: #1f1f1f;
+  --primary-text-inverted: #ffffff;
   --secondary-text: #494949;
   --background-color: #f5f5f5;
+  --primary: #7996FC;
 }
 
 body.dark-theme {
