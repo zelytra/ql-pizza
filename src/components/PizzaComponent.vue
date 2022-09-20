@@ -6,7 +6,8 @@
 
 <script setup lang="ts">
 import PizzaVue from '../vue/PizzaVue.vue'
-import {Pizza, Ingredient, Basket} from '../object/Pizza.ts'
+import {Pizza, Ingredient, Basket} from '../object/Pizza'
+import {PropType} from 'vue';
 
 const pizzaList: Pizza[] = [
   {

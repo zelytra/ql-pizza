@@ -12,6 +12,8 @@
 
 <script setup lang="ts">
 import BasketVue from '/src/vue/BasketVue.vue'
+import {Basket} from '../object/Pizza'
+import {PropType} from 'vue';
 
 const props = defineProps({
   basket: {

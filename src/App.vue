@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import HeaderComponent from "./components/HeaderComponent.vue";
 import PizzaComponent from './components/PizzaComponent.vue'
-import {Basket} from './object/Pizza.ts'
-import {ref, onBeforeMount} from 'vue'
+import {Basket} from './object/Pizza'
+import {ref} from 'vue'
 
 const basket: Basket = ref<Basket>(new Basket());
 

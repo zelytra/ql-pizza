@@ -21,7 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, PropType} from 'vue'
+import {Basket, Pizza} from '../object/Pizza'
 
 const props = defineProps({
   pizza: {
@@ -135,7 +136,7 @@ function addToCart() {
   transform: scale(1.03);
   z-index: 1;
 
-  .ingredients:hover .tool-tip-text{
+  .ingredients:hover .tool-tip-text {
     visibility: visible;
   }
 }

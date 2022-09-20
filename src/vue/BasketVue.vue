@@ -8,6 +8,8 @@
 </template>
 
 <script setup lang="ts">
+import {PropType} from 'vue';
+import {Basket} from '../object/Pizza'
 
 function onCartClick() {
   console.log(props.basket)
