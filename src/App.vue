@@ -48,7 +48,7 @@ const basket: Basket = ref<Basket>(new Basket());
 
 @font-face {
   font-family: Jost-Medium;
-  src: url("/assets/fonts/jost/Jost-Medium.ttf");
+  src: url("assets/fonts/jost/Jost-Medium.ttf");
 }
 
 @font-face {

@@ -5,11 +5,13 @@
       <p>{{ basket.basket.length }}</p>
     </div>
 
-    <img @click="onCartClick()" src="src/assets/cart.png" style="width: 36px"/>
+    <img alt="icon" @click="onCartClick()" src="src/assets/cart.png" style="width: 36px"/>
 
     <div class="wrapper-cart-list" v-bind:class="{ displayCart: displayCart }" v-if="formatedBasket.length>0">
       <div class="pizza-cart" v-for="pizzaCart in formatedBasket">
-        <p>{{ pizzaCart.pizza.name }}-{{ pizzaCart.count }}</p>
+        <img :src="pizzaCart.pizza.image" style="width: 64px;height: 64px;object-fit: cover;">
+        <p style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.pizza.name }}</p>
+        <p style="font-family: Jost-MediumItalic;font-size: 18px">{{ pizzaCart.count }}</p>
       </div>
     </div>
 
@@ -49,7 +51,7 @@ const props = defineProps({
 
   .wrapper-cart-list {
     position: absolute;
-    visibility: hidden;
+    visibility: visible;
     animation: fadeOut 100ms;
     background-color: #eeeeee;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,13 +61,22 @@ const props = defineProps({
     height: 600px;
     z-index: 99;
 
+    .pizza-cart{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 98%;
+      margin: auto;
+      height: 70px;
+    }
+
     &.displayCart {
       animation: fadeIn 100ms;
       visibility: visible !important;
     }
   }
 
-  img {
+  img[alt="icon"] {
     margin-right: 38px;
     padding: 10px;
     border-radius: 8px;
