@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-pizza">
     <div class="content">
-      <img src="/src/assets/logo.webp" style="width: 64px; height: 64px">
+      <img @click="changeColor()" src="/src/assets/logo.webp" style="width: 64px; height: 64px">
       <h2>Pizza Delamama</h2>
     </div>
     <div class="content">
@@ -21,6 +21,10 @@ const props = defineProps({
     required: true
   }
 })
+
+function changeColor(){
+  document.body.classList.toggle("dark-theme");
+}
 </script>
 
 <style scoped lang="scss">

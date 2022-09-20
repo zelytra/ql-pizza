@@ -144,10 +144,10 @@ function addToCart() {
 .addToCartAnimation {
   position: absolute;
   z-index: 999999;
-  top: 0;
+  top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn 300ms;
   display: flex;

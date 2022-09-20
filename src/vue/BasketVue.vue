@@ -8,13 +8,22 @@
     <img alt="icon" @click="onCartClick()" src="src/assets/cart.png" style="width: 36px"/>
 
     <div class="wrapper-cart-list" v-bind:class="{ displayCart: displayCart }" v-if="formatedBasket.length>0">
-      <div class="pizza-cart" v-for="pizzaCart in formatedBasket">
-        <img :src="pizzaCart.pizza.image" style="width: 64px;height: 64px;object-fit: cover;">
-        <p style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.pizza.name }}</p>
-        <p style="font-family: Jost-MediumItalic;font-size: 18px">{{ pizzaCart.count }}</p>
-      </div>
-    </div>
 
+      <div class="pizza-cart" v-for="pizzaCart in formatedBasket">
+        <div class="pizza-wrapper">
+          <img :src="pizzaCart.pizza.image" style="width: 64px;height: 64px;object-fit: cover;">
+          <p style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.pizza.name }}</p>
+          <p style="font-family: Jost-MediumItalic;font-size: 18px">{{ pizzaCart.count }}</p>
+        </div>
+        <div class="separator"></div>
+      </div>
+
+      <div class="end-menu">
+        <div class="button">A Emporter</div>
+        <div class="button">Me faire livrer</div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -51,23 +60,57 @@ const props = defineProps({
 
   .wrapper-cart-list {
     position: absolute;
-    visibility: visible;
+    visibility: hidden;
     animation: fadeOut 100ms;
     background-color: #eeeeee;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 245px;
+    width: 300px;
     top: 55px;
-    right: 6px;
-    height: 600px;
+    right: 12px;
+    max-height: 600px;
     z-index: 99;
+    border-radius: 8px;
+    overflow: hidden;
+    overflow-y: auto;
 
-    .pizza-cart{
+    .end-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 8px;
+
+      .button {
+        background-color: var(--primary);
+        color: var(--primary-text-inverted);
+        padding: 8px;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+        margin: 4px;
+        width: fit-content;
+      }
+
+      .button:hover{
+        background-color: #6382ff;
+      }
+    }
+
+    .pizza-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 98%;
-      margin: auto;
+      margin: auto 8px auto auto;
       height: 70px;
+    }
+
+    .separator {
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+      border-radius: 2px;
     }
 
     &.displayCart {
