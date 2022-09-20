@@ -6,10 +6,40 @@ export interface Pizza {
     image: string
 }
 
+export interface PizzaBasket {
+    pizza: Pizza,
+    count: number
+}
+
 export class Basket {
     public basket: Pizza[] = [];
 
     constructor() {
+    }
+
+    public getFormatedBasket(): PizzaBasket[] {
+        const list: PizzaBasket[] = [];
+        this.basket.forEach(x => {
+
+            //Push if empty list
+            if (list.length <= 0) {
+                list.push({pizza: x, count: 1});
+                return;
+            }
+
+            // Increment count if pizza already in list
+            for (let y of list) {
+                if (y.pizza.name == x.name) {
+                    y.count++;
+                    return;
+                }
+            }
+
+            // Push new pizza if not in list
+            list.push({pizza: x, count: 1});
+
+        })
+        return list;
     }
 
     public getTotal(): number {
@@ -38,11 +68,11 @@ export class Ingredient {
     public static readonly ONION: Ingredient = new Ingredient('Cipolla', '/src/assets/ingredients/onion.png');
     public static readonly PEPPER: Ingredient = new Ingredient('Peproni', '/src/assets/ingredients/pepper.png');
     public static readonly SALMON: Ingredient = new Ingredient('Salmone', '/src/assets/ingredients/salmon.png');
-    public static readonly SURPRISE : Ingredient = new Ingredient('Sorpresa', '/src/assets/ingredients/surprise.png');
-    public static readonly TUNA : Ingredient = new Ingredient('Tonno', '/src/assets/ingredients/tuna.png');
-    public static readonly CREAM : Ingredient = new Ingredient('Panna Acida', '/src/assets/ingredients/cream.png');
-    public static readonly POTATOES : Ingredient = new Ingredient('Patata', '/src/assets/ingredients/potatoes.png');
-    
+    public static readonly SURPRISE: Ingredient = new Ingredient('Sorpresa', '/src/assets/ingredients/surprise.png');
+    public static readonly TUNA: Ingredient = new Ingredient('Tonno', '/src/assets/ingredients/tuna.png');
+    public static readonly CREAM: Ingredient = new Ingredient('Panna Acida', '/src/assets/ingredients/cream.png');
+    public static readonly POTATOES: Ingredient = new Ingredient('Patata', '/src/assets/ingredients/potatoes.png');
+
 
     constructor(name: string, icon: string) {
         this.name = name;
