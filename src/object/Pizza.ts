@@ -39,7 +39,7 @@ export class Ingredient {
     public static readonly PEPPER: Ingredient = new Ingredient('Peproni', '/src/assets/ingredients/pepper.png');
     public static readonly SALMON: Ingredient = new Ingredient('Salmone', '/src/assets/ingredients/salmon.png');
     public static readonly SURPRISE : Ingredient = new Ingredient('Sorpresa', '/src/assets/ingredients/surprise.png');
-    public static readonly TUNA : Ingredient = new Ingredient('Tonno', '/src/assets/ingredients/tune.png');
+    public static readonly TUNA : Ingredient = new Ingredient('Tonno', '/src/assets/ingredients/tuna.png');
     public static readonly CREAM : Ingredient = new Ingredient('Panna Acida', '/src/assets/ingredients/cream.png');
     public static readonly POTATOES : Ingredient = new Ingredient('Patata', '/src/assets/ingredients/potatoes.png');
     
