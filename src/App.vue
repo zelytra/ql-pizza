@@ -67,6 +67,7 @@ body {
   --primary-text: #1f1f1f;
   --primary-text-inverted: #ffffff;
   --secondary-text: #494949;
+  --secondary: #414141;
   --background-color: #f5f5f5;
   --primary: #7996FC;
 }

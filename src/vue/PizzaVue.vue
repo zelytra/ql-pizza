@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="addToCartAnimation" v-bind:class="{ fadeOut: fadeOut }" v-if="isAnimation">
-    <img alt="italian" src="src/assets/italian.png">
+    <img alt="italian" src="/src/assets/italian.png">
   </div>
 </template>
 
@@ -142,7 +142,7 @@ function addToCart() {
 }
 
 .addToCartAnimation {
-  position: absolute;
+  position: fixed;
   z-index: 999999;
   top: 0px;
   left: 0px;
