@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-wrapper" @mouseleave="closeCart()">
+  <div class="cart-wrapper">
 
     <div class="badge" v-if=" basket.basket.length > 0">
       <p>{{ basket.basket.length }}</p>
@@ -7,7 +7,8 @@
 
     <img alt="icon" @click="onCartClick()" src="src/assets/cart.png" style="width: 36px"/>
 
-    <div class="wrapper-cart-list" v-bind:class="{ displayCart: displayCart }" v-if="formatedBasket.length>0">
+    <div class="blur-cart" v-if="displayCart"></div>
+    <div class="wrapper-cart-list" v-bind:class="{ displayCart: displayCart }" v-if="formatedBasket.length>0" @mouseleave="closeCart()">
 
       <div class="pizza-cart" v-for="pizzaCart in formatedBasket">
         <div class="pizza-wrapper">
@@ -58,18 +59,28 @@ const props = defineProps({
 .cart-wrapper {
   position: relative;
 
+  .blur-cart{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 25;
+    backdrop-filter: blur(9.5px);
+  }
+
   .wrapper-cart-list {
     position: absolute;
     visibility: hidden;
     animation: fadeOut 100ms;
     background-color: #eeeeee;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 300px;
-    top: 55px;
-    right: 12px;
-    max-height: 600px;
+    width: 40vh;
+    top: 0px;
+    right: 0px;
+    height: calc(100vh - 8px);
     z-index: 99;
-    border-radius: 8px;
+    border-radius: 10px 0px 0px 10px;
     overflow: hidden;
     overflow-y: auto;
 
@@ -149,18 +160,22 @@ const props = defineProps({
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    width: 0vh;
   }
   100% {
     opacity: 1;
+    width: 40vh;
   }
 }
 
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    width: 40vh;
   }
   100% {
     opacity: 0;
+    width: 0vh;
   }
 }
 </style>
