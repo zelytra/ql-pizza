@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-pizza">
     <div class="content">
-      <img @click="changeColor()" src="/src/assets/logo.webp" style="width: 64px; height: 64px">
+      <img src="/src/assets/logo.webp" style="width: 64px; height: 64px">
       <h2>Pizza Delamama</h2>
     </div>
     <div class="content">
