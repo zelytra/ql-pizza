@@ -19,9 +19,9 @@
       <div class="pizza-cart" v-for="pizzaCart in formatedBasket">
         <div class="pizza-wrapper">
           <div class="amount-change">
-            <img src="/src/assets/minus.svg" alt="icon-amount" @click="removePizza(pizzaCart.pizza)">
-            <p style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.count }}</p>
-            <img src="/src/assets/add.svg" alt="icon-amount" @click="addPizza(pizzaCart.pizza)">
+            <img class="minus-button" src="/src/assets/minus.svg" alt="icon-amount" @click="removePizza(pizzaCart.pizza)">
+            <p class="pizza-count" style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.count }}</p>
+            <img class="plus-button" src="/src/assets/add.svg" alt="icon-amount" @click="addPizza(pizzaCart.pizza)">
           </div>
           <p style="font-family: Jost-Medium;font-size: 18px">{{ pizzaCart.pizza.name }}</p>
           <p style="font-family: Jost-MediumItalic;font-size: 18px">{{ pizzaCart.pizza.price }}€</p>
